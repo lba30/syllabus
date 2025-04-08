@@ -1,0 +1,208 @@
+
+.competence{
+    background-color: white;
+    padding: 10px;
+    height: 320px;
+}
+
+
+
+.bloc-comp{
+    text-align: center;
+    border-collapse: collapse;
+
+}
+
+.bloc-header{
+    color: white;
+    height: 60px;
+    width: 85px;
+    text-transform: uppercase;
+    background-image: url("../img/blocC.svg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: bottom;
+    padding-bottom:5px ;
+    cursor: pointer;
+    user-select: none;
+
+}
+
+
+.comp{
+    height: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+.bloc-header.bloc-actif{
+    background-image: url("../img/blocC-actif.svg");
+    vertical-align:middle;
+    padding-bottom:20px ;
+
+}
+
+.ens {
+    background-image: url("../img/circle.svg");
+    background-size:contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #0686a5;
+
+}
+
+.enseva{
+    background-image: url("../img/triangle.svg");
+    background-size:contain;
+    background-position:center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.eva{
+    background-image: url("../img/hexagon.svg");
+    background-size:contain;
+    background-position:center;
+    background-repeat: no-repeat;
+    color: #0686a5;
+}
+
+.nad{
+    background-image: url("../img/triangle-gray.svg");
+    background-size:contain;
+    background-position:top;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.meo{
+    background-image: url("../img/meo.svg");
+    background-size:contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #0686a5;
+}
+
+.vide{
+    height: 30px;
+    user-select: none;
+    background-image: url("../img/Line.svg");
+    background-size:contain;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+.label-bc-actif{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-transform: uppercase;
+    background-image: url("../img/bc-actif.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    user-select: none;
+    font-size: 10px;
+    padding: 4px;
+}
+
+.label-bc-notactif{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-transform: uppercase;
+    background-image: url("../img/bc-notactif.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    user-select: none;
+    font-size: 10px;
+    padding: 4px;
+
+}
+
+.label-text{
+    width: fit-content;
+    font-size: 10px;
+}
+
+.label-c-enseva{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-transform: uppercase;
+    background-image: url("../img/comp-enseva.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    user-select: none;
+    font-size: 10px;
+    padding: 8px;
+}
+.label-c-ens{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0686a5;
+    text-transform: uppercase;
+    background-image: url("../img/comp-ens.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    user-select: none;
+    font-size: 10px;
+    padding: 5px;
+}
+
+.label-c-meo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0686a5;
+    text-transform: uppercase;
+    background-image: url("../img/comp-meo.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    user-select: none;
+    font-size: 10px;
+    padding: 5px;
+}
+
+.label-c-eva{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0686a5;
+    text-transform: uppercase;
+    background-image: url("../img/comp-eva.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    user-select: none;
+    font-size: 10px;
+    padding: 5px;
+}
+
+.label-c-nad{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-transform: uppercase;
+    background-image: url("../img/comp-nad.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    user-select: none;
+    font-size: 10px;
+    padding: 8px;
+}

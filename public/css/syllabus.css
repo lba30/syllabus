@@ -1,0 +1,290 @@
+*{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.3;
+    background-color: rgb(202, 202, 202);
+}
+.page {
+    page-break-after: always;
+    page-break-inside:avoid;
+}
+
+.header{
+    width: 100%;
+}
+.header tr{
+    background: white;
+}
+.header td{
+    padding: 0.5rem;
+}
+
+.layout-table {
+    border: none;
+    width: 100%;
+
+}
+.layout-table td {
+    border: none;
+    padding: 0.4rem;
+}
+
+.ue--partie1{
+    width: 50%;
+    background: white;
+    vertical-align: baseline;
+    height: 200px;
+    font-size: 13px;
+}
+
+.ue--partie1 p{
+    padding: 0.5rem;
+    vertical-align: baseline;
+
+
+}
+
+.coefficient{
+    text-align: center;
+    font-size: 11px;
+
+}
+
+hr{
+    margin: 0.5rem 0;
+}
+
+.competence{
+    background-color: white;
+    padding: 10px;
+    height: 320px;
+}
+
+
+
+.bloc-comp{
+    text-align: center;
+    border-collapse: collapse;
+
+}
+
+.bloc-header{
+    color: white;
+    height: 60px;
+    width: 85px;
+    text-transform: uppercase;
+    background-image: url("../img/blocC.svg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: bottom;
+    padding-bottom:5px ;
+
+
+}
+
+
+.comp{
+    height: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: white;
+}
+
+.bloc-header.bloc-actif{
+    background-image: url("../img/blocC-actif.svg");
+    vertical-align:middle;
+    padding-bottom:20px ;
+
+}
+
+.ens {
+    background-image: url("../img/circle.svg");
+    background-size:contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #0686a5;
+
+}
+
+.enseva{
+    background-image: url("../img/triangle.svg");
+    background-size:contain;
+    background-position:center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.eva{
+    background-image: url("../img/hexagon.svg");
+    background-size:contain;
+    background-position:center;
+    background-repeat: no-repeat;
+    color: #0686a5;
+}
+
+.nad{
+    background-image: url("../img/triangle-gray.svg");
+    background-size:contain;
+    background-position:top;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.meo{
+    background-image: url("../img/meo.svg");
+    background-size:contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #0686a5;
+}
+
+
+.vide{
+    height: 30px;
+    user-select: none;
+    background-image: url("../img/Line.svg");
+    background-size:contain;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+.label-text{
+    font-size: 8px;
+}
+
+.onu{
+    font-size: 9px;
+    display: inline-block;
+
+}
+
+.label-bc-actif{
+    color: white;
+    text-transform: uppercase;
+    background-image: url("../img/bc-actif.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    user-select: none;
+    font-size: 8px;
+    padding: 4px;
+    text-align: center;
+}
+
+.label-bc-notactif{
+    color: white;
+    text-transform: uppercase;
+    background-image: url("../img/bc-notactif.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    user-select: none;
+    font-size: 8px;
+    padding: 4px;
+    text-align: center;
+
+}
+
+
+.label-c-enseva{
+    color: white;
+    text-transform: uppercase;
+    background-image: url("../img/comp-enseva.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    user-select: none;
+    font-size: 8px;
+    padding: 12px;
+    text-align: center;
+}
+.label-c-ens{
+    color: #0686a5;
+    text-transform: uppercase;
+    background-image: url("../img/comp-ens.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    user-select: none;
+    font-size: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.label-c-meo{
+    color: #0686a5;
+    text-transform: uppercase;
+    background-image: url("../img/comp-meo.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    user-select: none;
+    font-size: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.label-c-eva{
+    color: #0686a5;
+    text-transform: uppercase;
+    background-image: url("../img/comp-eva.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    user-select: none;
+    font-size: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.label-c-nad{
+    color: white;
+    text-transform: uppercase;
+    background-image: url("../img/comp-nad.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    user-select: none;
+    font-size: 8px;
+    padding: 12px;
+    text-align: center;
+}
+
+.footer{
+   border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    border-spacing: 0;
+
+}
+.footer td,footer th{
+    padding: 0;
+}
+
+.footer-logo{
+    width: 70px;
+    height: 50px;
+    background-size:contain;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+.footer-label{
+    background: white;
+    height: 30px;
+    padding-left: 40px;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+
+
