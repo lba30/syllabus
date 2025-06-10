@@ -1,6 +1,7 @@
 <?php
 
 require_once './models/ecueManager.php';
+require_once './models/userManager.php';
 $idmodule = intval($_GET['id']);
 
 // Vérifie si une action d'ajout d'ECUE est demandée

@@ -26,6 +26,10 @@
                 <input class="form-control numberfield" name="nbhcours" id="nbhcours"  >
             </div>
             <div class="col mb-3">
+                <label for="nbhcourstd">Nombre d'heures de cours intégré (cours + TD)</label>
+                <input class="form-control numberfield" name="nbhcourstd" id="nbhcourstd"  >
+            </div>
+            <div class="col mb-3">
                 <label for="nbhtd">Nombre d'heures de td</label>
                 <input class="form-control numberfield" name="nbhtd" id="nbhtd"  >
             </div>

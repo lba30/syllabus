@@ -7,12 +7,21 @@ require_once './config/db.php';
  *
  * @return PDO L'objet de connexion à la base de données.
  */
-function dbConnect()
+function dbConnect(): PDO
 {
+    if ($_SERVER['HTTP_HOST'] === 'syllabus.mines-ales.fr') {
+        $CURRENT_CONFIG = DB_CONFIG_PROD;
+    }
+    elseif ($_SERVER['HTTP_HOST'] === 'syllabus-dev.mines-ales.fr') {
+        $CURRENT_CONFIG = DB_CONFIG_PREPROD;
+    } elseif ($_SERVER['HTTP_HOST'] === 'localhost') {
+        $CURRENT_CONFIG = DB_CONFIG_DEV;
+    }
+    
     $db = new PDO(
-        "pgsql:host=" . DB_CONFIG['host'] . ";port=" . DB_CONFIG['port'] . ";dbname=" . DB_CONFIG['dbname'] . ";sslmode=prefer",
-        DB_CONFIG['username'],
-        DB_CONFIG['password']
+        "pgsql:host=" . $CURRENT_CONFIG['host'] . ";port=" . $CURRENT_CONFIG['port'] . ";dbname=" . $CURRENT_CONFIG['dbname'] . ";sslmode=prefer",
+        $CURRENT_CONFIG['username'],
+        $CURRENT_CONFIG['password']
     );
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

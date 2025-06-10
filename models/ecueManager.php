@@ -23,25 +23,6 @@ function getEcue($id)
 }
 
 /**
- * Récupère les responsables (administrateurs et responsables).
- *
- * @return array La liste des responsables.
- */
-function getResponsables()
-{
-
-    // Récupérer les responsables (administrateurs et responsables)
-    $sql = "SELECT u.idutilisateur as id , username as nomresponsable FROM syllabus.utilisateur u
-            JOIN syllabus.role r ON u.idrole = r.idrole
-            WHERE r.label IN ('administrateur', 'responsable');";
-    $query = dbConnect()->prepare($sql);
-    $query->execute();
-    $res = $query->fetchAll(PDO::FETCH_ASSOC);
-    $query->closeCursor();
-    return $res;
-}
-
-/**
  * Modifie les données d'une ECUE.
  *
  * @param array $data Les données de l'ECUE à modifier.
@@ -56,7 +37,7 @@ function modifierEcue($data)
         $conn->beginTransaction();
         // Modifier les données dans la table matiereenseignee
         $sql1 = "UPDATE syllabus.matiereenseignee
-            SET libelle=:libelle, ordre=:ordre, contexte=:contexte, prerequis=:prerequis, plandecours=:plandecours, ressourcereference=:ressourcereference, nbhcours=:nbhcours, nbhtd=:nbhtd, nbhtp=:nbhtp, nbhprojet=:nbhprojet, nbhautre=:nbhautre, nbhcontrole=:nbhcontrole, nbhautonomie=:nbhautonomie, coefficient=:coefficient, objectif=:objectif, activites=:activites, evaluation=:evaluation,idresponsable=:idresponsable
+            SET libelle=:libelle, ordre=:ordre, contexte=:contexte, prerequis=:prerequis, plandecours=:plandecours, ressourcereference=:ressourcereference, nbhcours=:nbhcours, nbhcourstd=:nbhcourstd, nbhtd=:nbhtd, nbhtp=:nbhtp, nbhprojet=:nbhprojet, nbhautre=:nbhautre, nbhcontrole=:nbhcontrole, nbhautonomie=:nbhautonomie, coefficient=:coefficient, objectif=:objectif, activites=:activites, evaluation=:evaluation,idresponsable=:idresponsable
             WHERE idmatiereenseignee=:id;";
         $query = $conn->prepare($sql1);
         $query->bindParam(":id", $data['id'], PDO::PARAM_INT);
@@ -67,6 +48,7 @@ function modifierEcue($data)
         $query->bindParam(":plandecours", $data['plandecours'], PDO::PARAM_STR);
         $query->bindParam(":ressourcereference", $data['ressourcereference'], PDO::PARAM_STR);
         $query->bindParam(":nbhcours", $data['nbhcours'], PDO::PARAM_STR);
+        $query->bindParam(":nbhcourstd", $data['nbhcourstd'], PDO::PARAM_STR);
         $query->bindParam(":nbhtd", $data['nbhtd'], PDO::PARAM_STR);
         $query->bindParam(":nbhautonomie", $data['nbhautonomie'], PDO::PARAM_STR);
         $query->bindParam(":nbhcontrole", $data['nbhcontrole'], PDO::PARAM_STR);
@@ -137,8 +119,8 @@ function ajouterEcue($data)
         $idgroupematiereenseignee = $conn->lastInsertId();
         // Ajouter une matiereenseignee
         $sql3 = "INSERT INTO syllabus.matiereenseignee(
-	            idgroupematiereenseignee,nbheures, libelle, ordre, contexte, prerequis, plandecours, ressourcereference, nbhcours, nbhtd, nbhtp, nbhprojet, nbhautre, nbhcontrole, nbhautonomie, coefficient, objectif, activites, evaluation,idresponsable)
-	        VALUES (:idgroupematiereenseignee,0, :libelle, :ordre, :contexte, :prerequis, :plandecours, :ressourcereference, :nbhcours, :nbhtd, :nbhtp, :nbhprojet, :nbhautre, :nbhcontrole, :nbhautonomie, :coefficient, :objectif, :activites, :evaluation,:idresponsable);";
+	            idgroupematiereenseignee,nbheures, libelle, ordre, contexte, prerequis, plandecours, ressourcereference, nbhcours, nbhcourstd, nbhtd, nbhtp, nbhprojet, nbhautre, nbhcontrole, nbhautonomie, coefficient, objectif, activites, evaluation,idresponsable)
+	        VALUES (:idgroupematiereenseignee,0, :libelle, :ordre, :contexte, :prerequis, :plandecours, :ressourcereference, :nbhcours, :nbhcourstd, :nbhtd, :nbhtp, :nbhprojet, :nbhautre, :nbhcontrole, :nbhautonomie, :coefficient, :objectif, :activites, :evaluation,:idresponsable);";
         $query3 = $conn->prepare($sql3);
         $query3->bindParam(":idgroupematiereenseignee", $idgroupematiereenseignee, PDO::PARAM_INT);
         $query3->bindParam(":libelle", $data['libelle'], PDO::PARAM_STR);
@@ -148,6 +130,7 @@ function ajouterEcue($data)
         $query3->bindParam(":plandecours", $data['plandecours'], PDO::PARAM_STR);
         $query3->bindParam(":ressourcereference", $data['ressourcereference'], PDO::PARAM_STR);
         $query3->bindParam(":nbhcours", $data['nbhcours'], PDO::PARAM_STR);
+        $query3->bindParam(":nbhcourstd", $data['nbhcourstd'], PDO::PARAM_STR);
         $query3->bindParam(":nbhtd", $data['nbhtd'], PDO::PARAM_STR);
         $query3->bindParam(":nbhautonomie", $data['nbhautonomie'], PDO::PARAM_STR);
         $query3->bindParam(":nbhcontrole", $data['nbhcontrole'], PDO::PARAM_STR);

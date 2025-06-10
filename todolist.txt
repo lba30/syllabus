@@ -1,0 +1,11 @@
+Dans syllabus_template.php, vérifier si l'affichage détaillé des heures cours, td, etc. est coherent par rapport
+au test qui est effectué (si valeur = floor, on prend le numeric à 0 decimales, ce qui semble deja etre le cas???)
+Et voir si on peut le mettre dans une fonction en passant le nom du champ en parametre ...
+
+Refactoriser (au moins) getResponsables dupliquée 3 fois : OK
+
+Pour le ldap, si on veut récupérer nom et prénom pour les mettre en base :
+- nom : sn
+- prenom : givenName
+OU 
+- prenom nom : cn

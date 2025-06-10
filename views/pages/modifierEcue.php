@@ -31,6 +31,10 @@ if (session_status() === PHP_SESSION_NONE) {
                 <input class="form-control numberfield" name="nbhcours" id="nbhcours"  value="<?= htmlspecialchars($ecue['nbhcours'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
             </div>
             <div class="col mb-3">
+                <label for="nbhcourstd">Nombre d'heures de cours intégré (cours + TD) :</label>
+                <input class="form-control numberfield" name="nbhcourstd" id="nbhcourstd"  value="<?= htmlspecialchars($ecue['nbhcourstd'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+            </div>
+            <div class="col mb-3">
                 <label for="nbhtd">Nombre d'heures de TD :</label>
                 <input class="form-control numberfield" name="nbhtd" id="nbhtd"  value="<?= htmlspecialchars($ecue['nbhtd'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
             </div>

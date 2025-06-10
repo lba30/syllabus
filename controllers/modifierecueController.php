@@ -1,6 +1,8 @@
 <?php
 
 require_once './models/ecueManager.php';
+require_once './models/userManager.php';
+
 $idmatiere = intval($_GET['id']);
 // Récupère l'identifiant de la matière depuis les paramètres GET
 

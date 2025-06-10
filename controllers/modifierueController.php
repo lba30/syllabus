@@ -1,6 +1,8 @@
 <?php
 
 require_once './models/modifierueManager.php';
+require_once './models/userManager.php';
+
 // Récupère l'identifiant du module à partir des paramètres GET
 $idmodule = intval($_GET['id']);
 // Vérifie si l'action est de modifier une UE

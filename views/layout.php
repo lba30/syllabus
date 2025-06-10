@@ -34,6 +34,13 @@ require_once './models/helpers.php';
 
         <div class="collapse navbar-collapse mr-4">
         <ul class="navbar-nav ms-auto">
+            <?php if ($_SERVER['HTTP_HOST'] != 'syllabus.mines-ales.fr') : ?>
+                <li class="nav-item">
+                    <span class="alert alert-danger" role="alert">
+                        Version de TEST !!!
+                    </span>
+                </li>
+            <?php endif; ?>
             <?php if (isset($_SESSION['user_id'])) : ?>
                 <li class="nav-item">
                     <span class="navbar-text text-white me-3"><?php echo htmlspecialchars(str_replace(['.'], ' ', $_SESSION['username']), ENT_QUOTES, 'UTF-8'); ?></span>

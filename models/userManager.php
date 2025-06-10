@@ -18,3 +18,21 @@ function getUserById($userId)
 
     return $query->fetch(PDO::FETCH_ASSOC);
 }
+
+/**
+ * Récupère les responsables (administrateurs et responsables).
+ *
+ * @return array La liste des responsables.
+ */
+function getResponsables(): array
+{
+    // Récupérer les responsables (administrateurs et responsables)
+    $sql = "SELECT u.idutilisateur as id, username as nomresponsable, email as emailresponsable FROM syllabus.utilisateur u
+            JOIN syllabus.role r ON u.idrole = r.idrole
+            WHERE r.label IN ('administrateur', 'responsable');";
+    $query = dbConnect()->prepare(query: $sql);
+    $query->execute();
+    $res = $query->fetchAll(mode: PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $res;
+}

@@ -1,6 +1,8 @@
 <?php
 
 require_once './models/ajouterueManager.php';
+require_once './models/userManager.php';
+
 // Récupérer les années distinctes et les responsables
 $years = getDistinctYears();
 $responsables = getResponsables();

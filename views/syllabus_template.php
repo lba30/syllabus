@@ -61,7 +61,7 @@ foreach ($ue['bloccompetences'] as $item) {
                                 <td  class="coefficient"><small> <b> <?php echo htmlspecialchars($ecue['coefficient'] ?? '', ENT_QUOTES, 'UTF-8') ?></b> </small></td>
                             </tr>
                                 <?php
-                                $totalHeuresEncadrees += $ecue['nbhcours'] + $ecue['nbhtd'] + $ecue['nbhtp'] + $ecue['nbhprojet'] + $ecue['nbhautre'] + $ecue['nbhcontrole'];
+                                $totalHeuresEncadrees += $ecue['nbhcours'] + $ecue['nbhcourstd'] + $ecue['nbhtd'] + $ecue['nbhtp'] + $ecue['nbhprojet'] + $ecue['nbhautre'] + $ecue['nbhcontrole'];
                                 $totalHeuresAutonomies += $ecue['nbhautonomie'];
                             endforeach;?>
                         </tbody>
@@ -208,6 +208,10 @@ foreach ($ue['bloccompetences'] as $item) {
                                 <td class="coefficient"> <?= (is_numeric($ecue['nbhcours']) && floor($ecue['nbhcours']) == $ecue['nbhcours']) ? number_format($ecue['nbhcours'], 0) : $ecue['nbhcours'] ?> </td>
                             </tr>
                             <tr style="background-color: white;">
+                                <td ><small>Cours intégré (cours + TD)</small></td>
+                                <td class="coefficient"> <?= (is_numeric($ecue['nbhcourstd']) && floor($ecue['nbhcourstd']) == $ecue['nbhcourstd']) ? number_format($ecue['nbhcourstd'], 0) : $ecue['nbhcourstd'] ?> </td>
+                            </tr>
+                            <tr style="background-color: white;">
                                 <td ><small>TD</small></td>
                                 <td class="coefficient"> <?= (is_numeric($ecue['nbhtd']) && floor($ecue['nbhtd']) == $ecue['nbhtd']) ? number_format($ecue['nbhtd'], 0) : $ecue['nbhtd'] ?> </td>
                             </tr>
@@ -250,14 +254,14 @@ foreach ($ue['bloccompetences'] as $item) {
                     <td style="font-size:10px;padding:0"><small>(évaluations qui comptent pour la note ou qui permettent à l'étudiant de se situer, corrigés, feedback personnalisé...)</small></td>
                 </tr>
                 <tr>
-                    <td style="background-color:white;height:200px;width: 33%;vertical-align: baseline;font-size:13px;">
-                        <?= htmlspecialchars(nl2br($ecue['objectif']), ENT_QUOTES, 'UTF-8') ?>
+                    <td style="background-color:white;width: 33%;vertical-align: baseline;font-size:13px;">
+                        <?= nl2br(htmlspecialchars($ecue['objectif'], ENT_QUOTES, 'UTF-8')) ?>
                     </td>
-                    <td style="background-color:white;height:200px;width: 33%;vertical-align: baseline;font-size:13px;">
-                        <?= htmlspecialchars(nl2br($ecue['activites']), ENT_QUOTES, 'UTF-8') ?>
+                    <td style="background-color:white;width: 33%;vertical-align: baseline;font-size:13px;">
+                        <?= nl2br(htmlspecialchars($ecue['activites'], ENT_QUOTES, 'UTF-8')) ?>
                     </td>
-                    <td style="background-color:white;height:200px;width: 33%;vertical-align: baseline;font-size:13px;">
-                        <?= htmlspecialchars(nl2br($ecue['evaluation']), ENT_QUOTES, 'UTF-8') ?>
+                    <td style="background-color:white;width: 33%;vertical-align: baseline;font-size:13px;">
+                        <?= nl2br(htmlspecialchars($ecue['evaluation'], ENT_QUOTES, 'UTF-8')) ?>
                     </td>
                 </tr>
             </table>
@@ -285,12 +289,12 @@ foreach ($ue['bloccompetences'] as $item) {
             
             <h4 style="margin-bottom:5">Plan de cours</h4> 
             <p style="background-color:white; padding:10px;height:150px;margin:0;font-size:11.5px">
-                <?= htmlspecialchars(nl2br($ecue["plandecours"]), ENT_QUOTES, 'UTF-8') ?>
+                <?= nl2br(htmlspecialchars($ecue["plandecours"], ENT_QUOTES, 'UTF-8')) ?>
             </p>
                                 
             <h4 style="margin-bottom:5">Ressources et références</h4>
             <p style="background-color:white; padding:10px;max-height:360px;margin:0;font-size:11px">
-                <?= htmlspecialchars(nl2br($ecue["ressourcereference"]), ENT_QUOTES, 'UTF-8') ?>
+                <?= nl2br(htmlspecialchars($ecue["ressourcereference"], ENT_QUOTES, 'UTF-8')) ?>
             </p>
             
 

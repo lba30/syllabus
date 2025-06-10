@@ -27,24 +27,6 @@ function getBlocCompetenceNonAjouter($id)
 }
 
 /**
- * Récupère les responsables (administrateurs et responsables).
- *
- * @return array Les responsables.
- */
-function getResponsables()
-{
-    $sql = "SELECT u.idutilisateur as id , username as nomresponsable FROM syllabus.utilisateur u
-            JOIN syllabus.role r ON u.idrole = r.idrole
-            WHERE r.label IN ('administrateur', 'responsable');";
-
-    $query = dbConnect()->prepare($sql);
-    $query->execute();
-    $res = $query->fetchAll(PDO::FETCH_ASSOC);
-    $query->closeCursor();
-    return $res;
-}
-
-/**
  * Ajoute un bloc de compétences à un module.
  *
  * @param int $idmodule L'identifiant du module.
