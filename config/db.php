@@ -9,7 +9,7 @@ const DB_CONFIG_PROD = [
   'port'     => '5433',
   'dbname'   => 'syllabus',
   'username' => 'syllabus',
-  'password' => 'VvyEaWmw?M>27u'
+  'password' => 'xxx'
 ];
 
 const DB_CONFIG_PREPROD = [
@@ -17,7 +17,7 @@ const DB_CONFIG_PREPROD = [
   'port'     => '5433',
   'dbname'   => 'syllabus_dev',
   'username' => 'syllabus_dev',
-  'password' => 'agcgVLtwaKe652Bf=d7'
+  'password' => 'xxx'
 ];
 
 const DB_CONFIG_DEV = [
@@ -25,5 +25,5 @@ const DB_CONFIG_DEV = [
   'port'     => '5432',
   'dbname'   => 'syllabus',
   'username' => 'syllabus',
-  'password' => 'VvyEaWmw?M>27u'
+  'password' => 'xxx'
 ];
